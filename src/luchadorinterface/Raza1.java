@@ -15,7 +15,6 @@ public class Raza1 implements Skills, Magrase {
     private int atk;
     private int defenza;
     private int magia;
-  
 
     public Raza1(String Nombre, int Hp, int atk, int defenza, int magia) {
         this.Nombre = Nombre;
@@ -113,4 +112,48 @@ public class Raza1 implements Skills, Magrase {
         return 0;
     }
 
+    public void mostrar() {
+        System.out.println("NOMBRE:" + this.Nombre);
+        System.out.println("HP: " + this.Hp);
+        System.out.println("ATK: " + this.atk);
+        System.out.println("DEF: " + this.defenza);
+        System.out.println("DES: " + this.magia);
+    }
+
+    public void atacarLuchador(Raza1 luchador) {//el parametro es el luchador que llega
+
+        System.out.println("Tiro de dados para destreza......");
+        int dl1 = (int) (Math.random() * (20 - 1 + 1)) + 1;
+        int dl2 = (int) (Math.random() * (20 - 1 + 1)) + 1;
+
+        System.out.println("dado 1:" + dl1);
+        System.out.println("dado 2:" + dl2);
+        System.out.println(" ");
+
+        //modificamos la destreza con el dado 20
+        this.setDefenza(this.defenza + dl1);
+        luchador.setDefenza(luchador.defenza + dl2);
+        //modificamos el atk con el dado 20
+        this.setAtk(this.atk + dl1);
+        luchador.setAtk(luchador.atk + dl2);
+        //atributos en pantalla
+        System.out.println("Nombre: " + this.Nombre + " " + "Atk: " + this.atk + " " + "Des: " + this.defenza);
+        System.out.println("Nombre: " + luchador.Nombre + " " + "Atk: " + luchador.atk + " " + "Des: " + luchador.defenza);
+        System.out.println(" ");
+
+        if (this.defenza > luchador.defenza) {
+            luchador.Hp = luchador.Hp - (luchador.atk - this.magia);
+            luchador.mostrar();
+
+        } else if (this.defenza < luchador.defenza) {
+            this.Hp = this.Hp - (this.atk - luchador.magia);
+            this.mostrar();
+
+        }
+        this.defenza = 60;
+        luchador.defenza = 60;
+        this.atk = 100;
+        luchador.atk = 100;
+
+    }
 }

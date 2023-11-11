@@ -16,116 +16,78 @@ public class Luchadorinterface {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-       
-               
+        Scanner sc = new Scanner(System.in);
 
-        Raza1 Ironman = new Raza1("Iron man", 100, 40, 10, 30);
-        Raza2 Duende = new Raza2("Dragon", 200, 300, 14, 20);
-        Raza3 Dragon = new Raza3("Duende verde", 80, 10, 50, 80);
         
-        System.out.println("Luchadores activos: ");
+
+// Luchadores de la Raza1
+        Raza1 Ironman = new Raza1("Iron man", 9999, 40, 40, 30);
+        Raza1 Thanos = new Raza1("Thanos", 150, 50, 30, 10);
+
+        System.out.println("Luchadores listos para la pelea: ");
         System.out.println(" ");
-        System.out.println("1. Iron man ");
-        System.out.println("2. Duende");
-        System.out.println("3. Dragon ");
+        System.out.println("1. Iron man");
+        System.out.println("2. Thanos");
         System.out.println(" ");
         System.out.println("Escoge tu luchador");
-        
-        Scanner sc = new Scanner(System.in);
-        int opc = sc.nextInt();
+        int opc1 = sc.nextInt();
 
-        switch (opc) {
-            case 1:
-                System.out.println("Iron Man");
-                System.out.println("1. Atacar");
-                System.out.println("2. Escapar");
-                System.out.println("3. Ataque de Hielo");
-                System.out.println("4. Curar");
-                System.out.println("Elige tu poder :");
-                int opc1 = sc.nextInt();
+        Raza1 jugador1 = seleccionarLuchador(opc1);
+        Raza1 jugador2;
 
-                switch (opc1) {
-                    case 1:
-                        Ironman.Atacar();
-                        break;
-                    case 2:
-                        Ironman.Escapar();
-                        break;
-                    case 3:
-                        Ironman.Ataquehielo();
+        // Cambiando las opciones disponibles dependiendo de la elección del primer luchador
+        if (opc1 == 1) {
+            System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
+            System.out.println("1. Iron man");
+            System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
+            System.out.println("2. Thanos");
+        } else if (opc1 == 2) {
+            System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
+            System.out.println("2. Thanos");
+            System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
+            System.out.println("1. Iron man");
+        }
 
-                        break;
-                    case 4:
-                        Ironman.curar();
+        int opc2 = sc.nextInt();
+        jugador2 = seleccionarLuchador(opc2);
 
-                        break;
-                    default:
-                        System.out.println("Opción no válida");
-                }
-                break;
+        while (jugador1.getHp() > 0 && jugador2.getHp() > 0) {
+            int dl1 = (int) (Math.random() * (6 - 1 + 1)) + 1; // dado del luchador 1
+            int dl2 = (int) (Math.random() * (6 - 1 + 1)) + 1; // dado del luchador 2
 
-            case 2:
-                System.out.println("Duende");
-                System.out.println("1. Doble Ataque");
-                System.out.println("2. Escapar");
-                System.out.println("Elige tu poder:");
-                int opc2 = sc.nextInt();
+            System.out.println("Tiro de dados para turno.....");
+            System.out.println("Dado luchador 1: " + dl1);
+            System.out.println("Dado luchador 2: " + dl2);
+            System.out.println(" ");
 
-                switch (opc2) {
-                    case 1:
-                        Duende.Dobleataque();
+            if (dl1 > dl2) {
+                System.out.println("Gano " + jugador1.getNombre() + " pega:");
+                System.out.println("Ataca: " + jugador1.getNombre());
+                jugador1.atacarLuchador(jugador2);
+            } else if (dl2 > dl1) {
+                System.out.println("Gano " + jugador2.getNombre() + " pega:");
+                System.out.println("Ataca: " + jugador2.getNombre());
+                jugador2.atacarLuchador(jugador1);
+            }
 
-                        break;
-                    case 2:
-                        Duende.Escapar();
-                        break;
-                    default:
-                        System.out.println("Opción no válida");
-                }
-                break;
-
-            case 3:
-                System.out.println("Dragon");
-                System.out.println("1. Ataque de Fuego");
-                System.out.println("2. Ataque de Hielo");
-                System.out.println("3. Ataque");
-                System.out.println("4. Robo de Vida");
-                System.out.println("Elige tu poder:");
-                int opc3 = sc.nextInt();
-
-                switch (opc3) {
-                    case 1:
-                        Dragon.Ataquefuego();
-                        break;
-                    case 2:
-                        Dragon.Ataquehielo();
-
-                        Dragon.Ataquehielo();
-
-                        break;
-                    case 3:
-                        Dragon.Ataque();
-
-                        Dragon.Ataque();
-
-                        break;
-
-                    case 4:
-                        Dragon.Robovida();
-
-                        Dragon.Robovida();
-
-                        break;
-                    default:
-                        System.out.println("Opción no válida");
-
-                }
-                break;
-            default:
-                System.out.println("Ingrese del 1 al tres");
+            //Lo que se imprime
+            System.out.println(" ");
+            System.out.println(jugador2.getNombre() + ": " + jugador2.getHp());
+            System.out.println(jugador1.getNombre() + ": " + jugador1.getHp());
         }
     }
-}  
 
-      
+    private static Raza1 seleccionarLuchador(int opcion) {
+        switch (opcion) {
+            case 1:
+                return new Raza1("Iron man",9999 , 40, 40, 30);
+            case 2:
+                return new Raza1("Thanos", 150, 50, 30, 10);
+            default:
+                System.out.println(
+               
+"Opcion incorrecta, elige nuevamente.");
+                return seleccionarLuchador(new Scanner(System.in).nextInt());
+        }
+    }
+}
