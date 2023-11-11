@@ -18,8 +18,6 @@ public class Luchadorinterface {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        
-
 // Luchadores de la Raza1
         Raza1 Ironman = new Raza1("Iron man", 9999, 40, 40, 30);
         Raza1 Thanos = new Raza1("Thanos", 150, 50, 30, 10);
@@ -39,12 +37,12 @@ public class Luchadorinterface {
         if (opc1 == 1) {
             System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
             System.out.println("1. Iron man");
-            System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
+
             System.out.println("2. Thanos");
         } else if (opc1 == 2) {
             System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
             System.out.println("2. Thanos");
-            System.out.println("Escoge el luchador para enfrentar a " + jugador1.getNombre());
+
             System.out.println("1. Iron man");
         }
 
@@ -80,13 +78,12 @@ public class Luchadorinterface {
     private static Raza1 seleccionarLuchador(int opcion) {
         switch (opcion) {
             case 1:
-                return new Raza1("Iron man",9999 , 40, 40, 30);
+                return new Raza1("Iron man", 9999, 40, 40, 30);
             case 2:
                 return new Raza1("Thanos", 150, 50, 30, 10);
             default:
                 System.out.println(
-               
-"Opcion incorrecta, elige nuevamente.");
+                        "Opcion incorrecta, elige nuevamente.");
                 return seleccionarLuchador(new Scanner(System.in).nextInt());
         }
     }
