@@ -9,6 +9,7 @@ package luchadorinterface;
  * @author jhon1
  */
 public class Raza3 implements Magrase {
+
     private String Nombre;
     private int Hp;
     private int atk;
@@ -62,7 +63,6 @@ public class Raza3 implements Magrase {
     public void setMagia(int magia) {
         this.magia = magia;
     }
-    
 
     @Override
     public int curar() {
@@ -74,7 +74,7 @@ public class Raza3 implements Magrase {
     public int Robovida() {
         System.out.println("Robando vida al oponente...");
         return 0;
-               
+
     }
 
     @Override
@@ -94,5 +94,5 @@ public class Raza3 implements Magrase {
         System.out.println("Ataque de fuego...");
         return 0;
     }
-    
+
 }

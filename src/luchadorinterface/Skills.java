@@ -9,8 +9,11 @@ package luchadorinterface;
  * @author jhon1
  */
 public interface Skills {
+
     public int Escapar();
+
     public int Atacar();
+
     public int Dobleataque();
-    
+
 }

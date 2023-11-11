@@ -8,13 +8,14 @@ package luchadorinterface;
  *
  * @author jhon1
  */
-public class Raza1 implements Skills,Magrase{
+public class Raza1 implements Skills, Magrase {
 
     private String Nombre;
     private int Hp;
     private int atk;
     private int defenza;
     private int magia;
+  
 
     public Raza1(String Nombre, int Hp, int atk, int defenza, int magia) {
         this.Nombre = Nombre;
@@ -63,8 +64,6 @@ public class Raza1 implements Skills,Magrase{
     public void setMagia(int magia) {
         this.magia = magia;
     }
-    
-    
 
     @Override
     public int Escapar() {
@@ -113,6 +112,5 @@ public class Raza1 implements Skills,Magrase{
         System.out.println("Ataque de hielo...");
         return 0;
     }
-    
-    
+
 }
