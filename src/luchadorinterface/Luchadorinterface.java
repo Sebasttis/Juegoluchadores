@@ -44,7 +44,7 @@ public class Luchadorinterface {
         Dragon.Ataque();
         Dragon.Robovida();
         
-        atacarluchador.
+        
         
     
         
