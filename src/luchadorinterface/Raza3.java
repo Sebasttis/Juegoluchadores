@@ -9,6 +9,7 @@ package luchadorinterface;
  * @author jhon1
  */
 public class Raza3 implements Magrase {
+
     private String Nombre;
     private int Hp;
     private int Atk;
@@ -65,7 +66,6 @@ public class Raza3 implements Magrase {
     public void setMagia(int magia) {
         this.magia = magia;
     }
-    
 
     @Override
     public int curar() {
@@ -77,7 +77,7 @@ public class Raza3 implements Magrase {
     public int Robovida() {
         System.out.println("Robando vida al oponente...");
         return 0;
-               
+
     }
 
     @Override
@@ -98,6 +98,7 @@ public class Raza3 implements Magrase {
         return 0;
     }
 
+<<<<<<< HEAD
     void atacarLuchador(Raza1 Ironman) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -112,4 +113,6 @@ public class Raza3 implements Magrase {
 
    
     
+=======
+>>>>>>> e10dbf63d6386ab3d3e4b27edd1e2d9fc4ac7241
 }

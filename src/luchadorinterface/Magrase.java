@@ -9,10 +9,15 @@ package luchadorinterface;
  * @author jhon1
  */
 public interface Magrase {
+
     public int curar();
+
     public int Robovida();
+
     public int Ataque();
+
     public int Ataquehielo();
+
     public int Ataquefuego();
-    
+
 }
