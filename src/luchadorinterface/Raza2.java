@@ -13,7 +13,7 @@ public class Raza2 implements Skills {
     private String Nombre;
     private int Hp;
     private int atk;
-    private int defenza;
+    int defenza;
     private int magia;
 
     public Raza2(String Nombre, int Hp, int atk, int defenza, int magia) {

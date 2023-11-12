@@ -112,7 +112,54 @@ public class Raza1 implements Skills,Magrase{
     public int Ataquefuego() {
         System.out.println("Ataque de hielo...");
         return 0;
+    }   
+    public void mostrar(){
+        System.out.println("NOMBRE:"+this.Nombre);
+        System.out.println("HP: "+this.Hp);
+        System.out.println("ATK: "+this.atk);
+        System.out.println("DEF: "+this.defenza);
+        System.out.println("DES: "+this.magia);
+
+}
+      public void atacarLuchador(Raza1 Ironman){//el parametro es el luchador que llega
+       
+        System.out.println("Tiro de dados para destreza......");
+        int dl1 = (int) (Math.random() * (20 - 1+1)) + 1;  
+        int dl2 = (int) (Math.random() * (20 - 1+1)) + 1;
+        
+        System.out.println("dado 1:"+dl1);
+        System.out.println("dado 2:"+dl2);
+        System.out.println(" ");
+       
+        //modificamos la destreza con el dado 20
+        this.setDefenza(this.defenza+dl1);
+        Ironman.setDefenza(Ironman.defenza+dl2);
+        //modificamos el atk con el dado 20
+        this.setAtk(this.atk+dl1);
+        Ironman.setAtk(Ironman.atk+dl2);
+        //atributos en pantalla
+        System.out.println("Nombre: "+this.Nombre+" "+"Atk: "+this.atk+" "+"Des: "+this.defenza);
+        System.out.println("Nombre: "+Ironman.Nombre+" "+"Atk: "+Ironman.atk+" "+"Des: "+Ironman.defenza);
+        System.out.println(" ");
+       
+        if(this.defenza>Ironman.defenza){
+            Ironman.Hp=Ironman.Hp-(Ironman.atk-this.magia);
+            Ironman.mostrar();
+                     
+        }
+        else if(this.defenza<Ironman.defenza){
+           this.Hp=this.Hp-(this.atk-Ironman.magia);
+           this.mostrar();
+           
+        }
+        this.defenza=10;
+        Ironman.defenza=10;
+        this.atk=40;
+        Ironman.atk=40;
+   
     }
-    
-    
+
+    void atacarLuchador(Raza3 Dragon) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

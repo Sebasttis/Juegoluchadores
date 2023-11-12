@@ -20,7 +20,7 @@ public class Luchadorinterface {
         int dl3;
         
        Raza1 Ironman = new Raza1 ("Iron man",100,40,10,30);
-       Raza2 Duende  = new Raza2 ("Dragon",200,300,14,20);
+       Raza2 Duende  = new Raza2 ("Dragon",200,50,14,20);
        Raza3 Dragon = new Raza3 ("Duende verde",80,10,50,80);
         
        
@@ -43,12 +43,43 @@ public class Luchadorinterface {
         Dragon.Ataquehielo();
         Dragon.Ataque();
         Dragon.Robovida();
-       
-          
-    }
+        
+        atacarluchador.
+        
     
+        
+    
+     while(Ironman.getHp()>0 && Dragon.getHp()>0)
+    {
+      dl1 = (int) (Math.random() * (20 - 1+1)) + 1;//dado luchador 1  
+      dl2 = (int) (Math.random() * (20 - 1+1)) + 1;//dadoluchador 2      
+     
+      System.out.println("Tiro de dados para turno.....");
+      System.out.println("Dado luchador 1: "+dl1);
+      System.out.println("Dado luchador 2: "+dl2);
+      System.out.println(" ");
+         
+      if(dl1>dl2){
+         System.out.println("Gano luchador 1 pega:");
+         System.out.println("Ataca:"+Ironman.getNombre());
+         Ironman.atacarLuchador(Dragon);
+        }
+      else if(dl2>dl1){
+         System.out.println("Gano luchador 2 pega:");
+         System.out.println("Ataca:"+Dragon.getNombre());
+         Dragon.atacarLuchador(Ironman);
+        }
+    }
+   //Se imprimen en pantalla los valores finales:
+    System.out.println(" ");
+    System.out.println("Iron man "+Ironman.getHp());
+    System.out.println("Dragon "+Dragon.getHp());
+    }
 }
 
-    
-    
+
+
+       
+          
+     
 

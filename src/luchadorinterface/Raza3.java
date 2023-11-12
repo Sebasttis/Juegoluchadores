@@ -11,17 +11,20 @@ package luchadorinterface;
 public class Raza3 implements Magrase {
     private String Nombre;
     private int Hp;
-    private int atk;
+    private int Atk;
     private int defenza;
     private int magia;
+    
 
-    public Raza3(String Nombre, int Hp, int atk, int defenza, int magia) {
+    public Raza3(String Nombre, int hp, int atk, int defenza, int magia) {
         this.Nombre = Nombre;
-        this.Hp = Hp;
-        this.atk = atk;
+        this.Atk = atk;
+        this.Atk = atk;
         this.defenza = defenza;
         this.magia = magia;
     }
+
+  
 
     public String getNombre() {
         return Nombre;
@@ -40,11 +43,11 @@ public class Raza3 implements Magrase {
     }
 
     public int getAtk() {
-        return atk;
+        return Atk;
     }
 
-    public void setAtk(int atk) {
-        this.atk = atk;
+    public void setAtk(int Atk) {
+        this.Atk = Atk;
     }
 
     public int getDefenza() {
@@ -94,5 +97,19 @@ public class Raza3 implements Magrase {
         System.out.println("Ataque de fuego...");
         return 0;
     }
+
+    void atacarLuchador(Raza1 Ironman) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void Atk(Raza1 Ironman) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void getAtk(Raza1 Ironman) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+   
     
 }
